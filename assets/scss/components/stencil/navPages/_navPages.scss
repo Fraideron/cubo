@@ -70,6 +70,7 @@
     background-color: $navPages-backgroundColor;
     height: 100%;
     overflow-y: auto;
+    letter-spacing: 1px;
     padding: spacing("single");
 
     @include breakpoint("medium") {
@@ -79,7 +80,6 @@
         font-size: 0; // 1
         overflow-y: visible;
         padding: 0;
-        text-align: center;
     }
 
     ul {
@@ -185,10 +185,20 @@
     }
 }
 
+.navPages-aside {
+    display: flex;
+    margin: 0 0 0 auto;
+    list-style: none;
+
+    li:not(:first-child) {
+        margin-left: 50px;
+    }
+}
+
 .navPages-action {
     color: stencilColor("navPages-color");
     display: block;
-    font-size: fontSize("smaller");
+    font-size: 14px;
     font-weight: fontWeight("bold");
     padding: spacing("half") 0;
     text-decoration: none;
@@ -213,7 +223,7 @@
 
     @include breakpoint("medium") {
         display: inline-block;
-        padding: spacing("half") (spacing("half") + spacing("quarter")) (spacing("half") + spacing("quarter"));
+        padding: spacing("half") (spacing("half") + spacing("quarter")) (spacing("half"));
 
         &.is-open {
             background-color: $navPage-subMenu-item--is-highlighted-background;
@@ -271,7 +281,7 @@
         @include breakpoint("medium") {
             @include square(8px);
             margin: 0 0 0 spacing("half");
-        }    
+        }
     }
 }
 
@@ -293,7 +303,7 @@
     }
 
     .navPage-subMenu-action:not(.navPages-action-depth-max) + & {
-        margin-left: spacing("double"); // 
+        margin-left: spacing("double"); //
 
         @include breakpoint("medium") {
             margin-left: 0;
@@ -341,7 +351,7 @@
 
             @include breakpoint("medium") {
                 margin-right: auto;
-            }    
+            }
         }
     }
 }

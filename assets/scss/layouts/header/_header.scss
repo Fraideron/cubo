@@ -12,7 +12,7 @@
 // 5. When logo size is set to "original", we don't have advance knowledge of the
 //    image size, so we can't use absolute positioning + padding to reserve space
 //    for lazy loading.
-// 6. When logo size is set to "original" and switch to mobile version, it keeps 
+// 6. When logo size is set to "original" and switch to mobile version, it keeps
 //    content in center regardless its size.
 //
 // -----------------------------------------------------------------------------
@@ -33,21 +33,23 @@
 }
 
 .header {
-    background-color: $header-bg;
-    border-bottom: container("border");
-    position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
+    display: grid;
+    grid-gap: 30px;
+    align-items: center;
+    grid-template-columns: 1fr auto 1fr;
     z-index: zIndex("higher");
-    height: $header-height;
+    background: #fff;
 
     @include breakpoint("medium") {
-        border-bottom: container("border");
-        overflow: visible;
-        position: relative;
-        height: auto;
-        display: flex;
-        flex-direction: column;
+        padding: 35px 50px;
+
+        &.is-homepage {
+            position: absolute;
+            background: transparent;
+        }
     }
 
     &.is-open {
@@ -60,18 +62,12 @@
 }
 
 .header-logo {
+    margin: 0;
     font-size: 0;   // 1
-    margin: 0 remCalc($header-toggle-width); // 2
     text-align: center;
     height: $header-height;
 
-    @include breakpoint("small") { // 4
-        margin-left: remCalc($header-toggle-width * 1.5);
-        margin-right: remCalc($header-toggle-width * 1.5);
-    }
-
     @include breakpoint("medium") {
-        margin: (spacing("double") + spacing("base")) auto (spacing("double") + spacing("single"));
         padding: 0;
         height: auto;
 
@@ -175,10 +171,6 @@
 .header-logo-image-container {
     position: relative;
     width: 100%;
-    
-    @include breakpoint("medium") {
-        min-height: get-height(stencilString('logo_size'));
-    }
 }
 
 .header-logo-image-container:after {
@@ -187,13 +179,9 @@
 }
 
 .header-logo-image {
-    max-height: remCalc($header-height) - $header-logo-marginVertical * 2;
     display: block;
-    margin: 0 auto;
-
-    @include breakpoint("medium") {
-        max-height: none;
-    }
+    max-width: 169px;
+    max-height: 47px;
 }
 
 .header-logo-image-unknown-size { // 5

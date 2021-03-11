@@ -11,11 +11,14 @@ blog:
     recent_posts:
         limit: {{theme_settings.homepage_blog_posts_count}}
 ---
+
 {{#partial "hero"}}
     {{{region name="home_below_menu"}}}
-    {{#if carousel}}
-        {{> components/carousel arrows=theme_settings.homepage_show_carousel_arrows play_pause_button=theme_settings.homepage_show_carousel_play_pause_button}}
-    {{/if}}
+
+    <div class="hero">
+        <img width="1440" height="795" src="{{cdn 'img/bg-home.jpg'}}">
+    </div>
+
     {{{region name="home_below_carousel"}}}
 {{/partial}}
 

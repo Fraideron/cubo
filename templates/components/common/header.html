@@ -1,20 +1,7 @@
-<a href="#main-content" class="skip-to-main-link">{{lang 'header.skip_to_main'}}</a>
-{{#if banners.top}}
-<div class="banners" data-banner-location="top">
-    {{#each (limit banners.top_metadata 1)}}
-    <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-banner-id="{{this.banner-name}}">
-        <div data-event-type="promotion-click">
-            {{{this.content}}}
-        </div>
+<header class="header {{#if page_type 'default'}} is-homepage {{/if}}" role="banner">
+    <div class="navPages-container" id="menu" data-menu>
+        {{> components/common/navigation-menu}}
     </div>
-    {{/each}}
-</div>
-{{/if}}
-<header class="header" role="banner">
-    <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
-        <span class="mobileMenu-toggleIcon">Toggle menu</span>
-    </a>
-    {{> components/common/navigation}}
 
     {{#if page_type '===' 'default'}}
         <h1 class="header-logo header-logo--{{theme_settings.logo-position}}">
@@ -25,9 +12,37 @@
             {{> components/common/store-logo}}
         </div>
     {{/if}}
-    <div class="navPages-container" id="menu" data-menu>
-        {{> components/common/navigation-menu}}
-    </div>
+
+    <ul class="navPages-aside">
+        <li>
+            <button class="navUser-action navUser-action--quickSearch"
+               type="button"
+               id="quick-search-expand"
+               data-search="quickSearch"
+               aria-controls="quickSearch"
+               aria-label="{{lang 'common.search'}}"
+            >
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 19l-4.35-4.35M17 9A8 8 0 111 9a8 8 0 0116 0z" stroke="#1B1E1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+        </li>
+        <li>
+            <a class="navUser-action"
+                href="{{urls.auth.login}}"
+                aria-label="{{lang 'common.login'}}"
+            >
+                <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 19v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M13 5a4 4 0 11-8 0 4 4 0 018 0z" stroke="#1B1E1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+        </li>
+        <li>
+            <a class="navUser-action"
+               href="{{urls.cart}}"
+               aria-label="{{lang 'cart.nav_aria_label'}}"
+            >
+                <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6m4 15a1 1 0 11-2 0 1 1 0 012 0zm11 0a1 1 0 11-2 0 1 1 0 012 0z" stroke="#1B1E1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="countPill cart-quantity"></span>
+            </a>
+        </li>
+    </ul>
 </header>
 {{{region name="header_bottom--global"}}}
 {{{region name="header_bottom"}}}
