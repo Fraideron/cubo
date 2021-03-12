@@ -10,6 +10,7 @@
 
 .body {
     margin-bottom: spacing("double") * 2;
+    background: #FBF7F3;
 }
 
 
@@ -52,7 +53,84 @@
 }
 
 .hero {
+    position: relative;
+
     img {
         width: 100%;
+    }
+
+    svg {
+        position: absolute;
+        bottom: 34px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    max-width: 500px;
+    padding: 50px;
+    transform: translateY(-50%);
+    background: #fff;
+    text-transform: uppercase;
+
+    h2 {
+        margin: 0 0 40px;
+        font-size: 36px;
+    }
+
+    p {
+        display: inline-block;
+        position: relative;
+        margin: 0;
+        color: #89A999;
+        letter-spacing: 0.15em;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 115%;
+            top: 50%;
+            width: 53px;
+            height: 1px;
+            background: #89A999;
+        }
+    }
+}
+
+.benefits {
+    max-width: 1192px;
+    margin: 0 auto;
+    color: #847A6E;
+
+    ul {
+        display: flex;
+        justify-content: center;
+        margin: 50px 0;
+        padding-bottom: 40px;
+        border-bottom: 1px solid #D7C7B5;
+        list-style: none;
+    }
+
+    li {
+        display: inline-flex;
+        align-items: center;
+        margin: 0;
+        padding: 0 40px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+
+        &:not(:last-child) {
+            border-right: 1px solid #D7C7B5;
+        }
+    }
+
+    img {
+        max-width: 27px;
+        max-height: 17px;
+        margin-right: 10px;
     }
 }
