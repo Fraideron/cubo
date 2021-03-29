@@ -1,0 +1,74 @@
+.container-call {
+    margin: 0 5%;
+    border-bottom: 1px solid #D7C7B5;
+
+    .list {
+        display: flex;
+        justify-content: center;
+        margin: 47px 0 48px 0;
+        list-style: none;
+
+
+        .list-item {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+
+            color: #847A6E;
+            padding-left: 20px;
+        }
+
+        .shipping::before {
+            display: inline-block;
+            content: ' ';
+            background-image: url('../icons/shipping.svg');
+            background-repeat: no-repeat;
+            width: 27px;
+            height: 17px;
+            margin-right: 20px;
+        }
+
+        .shipping::after {
+            display: inline-block;
+            content: '|';
+            margin-left: 30px;
+            margin-right: 20px;
+        }
+
+        .experience::before {
+            display: inline-block;
+            content: ' ';
+            background-image: url('../icons/experience.svg');
+            background-repeat: no-repeat;
+            width: 27px;
+            height: 17px;
+            margin-right: 20px;
+        }
+
+        .experience::after {
+            display: inline-block;
+            content: '|';
+            margin-left: 30px;
+            margin-right: 20px;
+
+        }
+
+        .call-us::before {
+            display: inline-block;
+            content: ' ';
+            background-image: url('../icons/phone.svg');
+            background-repeat: no-repeat;
+            width: 27px;
+            height: 19px;
+            margin-right: 20px;
+        }
+
+    }
+}

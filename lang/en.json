@@ -13,7 +13,12 @@
         "powered_by": "Powered by"
     },
     "home": {
-        "heading": "Home"
+        "heading": "Home",
+        "call-us": {
+            "shipping": "Free Shipping On All Orders",
+            "experience": "With Over 20 Years Of Qualified Optical Experince",
+            "call-us": "Call us on  07864 339659" 
+        }
     },
     "blog": {
         "recent_posts": "Recent Posts",
